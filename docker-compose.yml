@@ -1,0 +1,93 @@
+version: '2'
+
+services:
+
+  mongo1:
+    privileged: true
+    build:
+      context: shard1/
+    hostname: mongo1
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  mongo2:
+    privileged: true
+    build:
+      context: shard1/
+    hostname: mongo2
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  mongo3:
+    privileged: true
+    build:
+      context: shard1/
+    hostname: mongo3
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  mongo4:
+    privileged: true
+    build:
+      context: shard2/
+    hostname: mongo4
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  mongo5:
+    privileged: true
+    build:
+      context: shard2/
+    hostname: mongo5
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  mongo6:
+    privileged: true
+    build:
+      context: shard2/
+    hostname: mongo6
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  config1:
+    privileged: true
+    build:
+      context: conf/
+    hostname: config1
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  config2:
+    privileged: true
+    build:
+      context: conf/
+    hostname: config2
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  config3:
+    privileged: true
+    build:
+      context: conf/
+    hostname: config3
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+
+  mongoss:
+    privileged: true
+    build:
+      context: mongoss/
+    hostname: mongoss
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+      - mongo4
+      - mongo5
+      - mongo6
+      - config1
+      - config2
+      - config3
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro

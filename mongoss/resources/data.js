@@ -1,0 +1,5 @@
+use sensores
+db.mediciones.insert({codigoSensor:100,fechaHora:ISODate('2018-10-20T16:36:14.197Z'),ubicacion:['-1.242806', '-78.637397'],temperaturaAmbiental:40.0,porcentajeHumedad:76,nivelDesibeli:300,intensidadLuminosa:10000})
+db.mediciones.insert({codigoSensor:50,fechaHora:ISODate('2018-10-20T16:36:14.197Z'),ubicacion:['-1.242806', '-78.637397'],temperaturaAmbiental:40.0,porcentajeHumedad:76,nivelDesibeli:300,intensidadLuminosa:10000})
+db.mediciones.insert({codigoSensor:2,fechaHora:ISODate('2014-10-20T16:36:14.197Z'),ubicacion:['-1.242806', '-78.637397'],temperaturaAmbiental:40.0,porcentajeHumedad:76,nivelDesibeli:300,intensidadLuminosa:10000})
+db.mediciones.insert({codigoSensor:2,fechaHora:ISODate('2014-10-20T16:36:14.197Z'),ubicacion:['-1.242806', '-78.637397'],temperaturaAmbiental:40.0,porcentajeHumedad:76,nivelDesibeli:300,intensidadLuminosa:10000})
